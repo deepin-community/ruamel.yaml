@@ -1,6 +1,6 @@
 
-[:platform_python_implementation=="CPython" and python_version<"3.10"]
-ruamel.yaml.clib>=0.1.2
+[:platform_python_implementation=="CPython" and python_version<"3.11"]
+ruamel.yaml.clib>=0.2.6
 
 [docs]
 ryd
