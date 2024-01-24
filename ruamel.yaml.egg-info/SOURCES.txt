@@ -1,7 +1,8 @@
 CHANGES
 LICENSE
 MANIFEST.in
-README.rst
+README.md
+pyproject.toml
 setup.py
 ./LICENSE
 ./__init__.py
@@ -12,6 +13,7 @@ setup.py
 ./configobjwalker.py
 ./constructor.py
 ./cyaml.py
+./docinfo.py
 ./dumper.py
 ./emitter.py
 ./error.py
@@ -30,13 +32,13 @@ setup.py
 ./scalarstring.py
 ./scanner.py
 ./serializer.py
+./tag.py
 ./timestamp.py
 ./tokens.py
 ./util.py
-.ruamel/__init__.py
 ruamel.yaml.egg-info/PKG-INFO
 ruamel.yaml.egg-info/SOURCES.txt
 ruamel.yaml.egg-info/dependency_links.txt
-ruamel.yaml.egg-info/namespace_packages.txt
+ruamel.yaml.egg-info/not-zip-safe
 ruamel.yaml.egg-info/requires.txt
 ruamel.yaml.egg-info/top_level.txt

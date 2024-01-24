@@ -1,37 +1,3 @@
-Metadata-Version: 2.1
-Name: ruamel.yaml
-Version: 0.18.5
-Summary: ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
-Author: Anthon van der Neut
-Author-email: a.van.der.neut@ruamel.eu
-License: MIT license
-Project-URL: Home, https://sourceforge.net/p/ruamel-yaml/
-Project-URL: Source, https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree/
-Project-URL: Tracker, https://sourceforge.net/p/ruamel-yaml/tickets/
-Project-URL: Documentation, https://yaml.readthedocs.io/
-Keywords: yaml 1.2 parser round-trip preserve quotes order config
-Classifier: Development Status :: 4 - Beta
-Classifier: Intended Audience :: Developers
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 3 :: Only
-Classifier: Programming Language :: Python :: 3.10
-Classifier: Programming Language :: Python :: 3.11
-Classifier: Programming Language :: Python :: 3.12
-Classifier: Programming Language :: Python :: 3.7
-Classifier: Programming Language :: Python :: 3.8
-Classifier: Programming Language :: Python :: 3.9
-Classifier: Programming Language :: Python :: Implementation :: CPython
-Classifier: Topic :: Software Development :: Libraries :: Python Modules
-Classifier: Topic :: Text Processing :: Markup
-Classifier: Typing :: Typed
-Requires-Python: >=3.7
-Description-Content-Type: text/markdown; charset=UTF-8; variant=CommonMark
-Provides-Extra: jinja2
-Provides-Extra: docs
-License-File: LICENSE
-
 # ruamel.yaml
 
 `ruamel.yaml` is a YAML 1.2 loader/dumper package for Python.
