@@ -2,6 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ruamel.yaml
 Upstream-Contact: Anthon van der Neut <a.van.der.neut@ruamel.eu>
 Source: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree
+Comment: Cloned and repacked from SourceForge repository
 
 Files: *
 Copyright: Anthon van der Neut <a.van.der.neut@ruamel.eu>
@@ -9,6 +10,7 @@ License: Expat
 
 Files: debian/*
 Copyright: 2015 Vincent Bernat <bernat@debian.org>
+  2024 Julian Gilbey <jdg@debian.org>
 License: Expat
 
 License: Expat

@@ -1,0 +1,74 @@
+Author: Michael R. Crusoe <crusoe@debian.org>, Julian Gilbey <jdg@debian.org>
+Description: Default to pure python parsing on big endian systems
+ The current version fails on big-endian systems as described in
+ https://sourceforge.net/p/ruamel-yaml/tickets/360/ and
+ https://sourceforge.net/p/ruamel-yaml-clib/tickets/34/
+ .
+ The current version of this patch completely disables the C extension on
+ big-endian systems.
+ .
+ Thanks to Rebecca N. Palmer for the tip about sys.byteorder!
+Forwarded: not-needed
+Last-Update: 2024-04-18
+
+--- ruamel.yaml.orig/__init__.py
++++ ruamel.yaml/__init__.py
+@@ -1,5 +1,6 @@
+ 
+ from __future__ import annotations
++import sys
+ 
+ if False:  # MYPY
+     from typing import Dict, Any  # NOQA
+@@ -40,11 +41,13 @@
+ version_info = _package_data['version_info']
+ __version__ = _package_data['__version__']
+ 
+-try:
+-    from .cyaml import *  # NOQA
+-
+-    __with_libyaml__ = True
+-except (ImportError, ValueError):  # for Jython
+-    __with_libyaml__ = False
++__with_libyaml__ = False
++if sys.byteorder == "little":
++    try:
++        from .cyaml import *  # NOQA
++
++        __with_libyaml__ = True
++    except (ImportError, ValueError):  # for Jython
++        pass
+ 
+ from ruamel.yaml.main import *  # NOQA
+--- ruamel.yaml.orig/_test/test_cyaml.py
++++ ruamel.yaml/_test/test_cyaml.py
+@@ -7,6 +7,10 @@
+ 
+ NO_CLIB_VER = (3, 12)
+ 
++pytestmark = pytest.mark.skipif(
++    sys.byteorder == "big",
++    reason="compiled library disabled on big-endian machines"
++)
+ 
+ @pytest.mark.skipif(  # type: ignore
+     platform.python_implementation() in ['Jython', 'PyPy'],
+--- ruamel.yaml.orig/main.py
++++ ruamel.yaml/main.py
+@@ -41,10 +41,12 @@
+     from types import TracebackType
+     from pathlib import Path
+ 
+-try:
+-    from _ruamel_yaml import CParser, CEmitter  # type: ignore
+-except:  # NOQA
+-    CParser = CEmitter = None
++CParser = CEmitter = None
++if sys.byteorder == "little":
++    try:
++        from _ruamel_yaml import CParser, CEmitter  # type: ignore
++    except:  # NOQA
++        pass
+ 
+ # import io
+ 
