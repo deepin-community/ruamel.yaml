@@ -1,0 +1,11 @@
+Downloading the ruamel.yaml source
+==================================
+
+ruamel.yaml is available as a Python package from PyPI.  However, this
+does not include the unit tests.  These are available in the
+SourceForge repository, but the repository does not have any tarballs
+available for download.  So the watch file calls a local script to
+clone the mercurial repository, check out the current tag, and pack it
+into a tarball in place of the downloaded PyPI version.  This script
+requires the mercurial package to be installed, but this is not a
+build-dependency.

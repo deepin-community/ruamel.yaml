@@ -1,0 +1,7 @@
+
+[tox]: https://pypi.python.org/pypi/tox
+[py.test]: http://pytest.org/latest/
+[YAML 1.1]: http://www.yaml.org/spec/1.1/spec.html
+[YAML 1.2]: http://www.yaml.org/spec/1.2/spec.html
+[PyPI]: https://pypi.python.org/pypi
+[ruamel.yaml]: https://pypi.python.org/pypi/ruamel.yaml
